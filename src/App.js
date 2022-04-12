@@ -1,12 +1,14 @@
 import { Component } from "react";
 import Circle from "./Circle";
 import Button from "./Button";
+import Popup from "./Popup";
 
 class App extends Component {
   state = {
     score: 0,
     pace: 1000,
     active: 0,
+    showPopup: false,
   };
 
   timer = undefined;
@@ -28,6 +30,7 @@ class App extends Component {
 
   stopGame = () => {
     clearTimeout(this.timer);
+    this.setState({ showPopup: true });
   };
 
   clickedCircle = (i) => {
@@ -59,11 +62,17 @@ class App extends Component {
         <p>Your score: {this.state.score}</p>
         <div className="circles">
           {this.circles.map((circle, i) => (
-            <Circle key={i} id={i} click={() => this.clickedCircle(i)} />
+            <Circle
+              key={i}
+              id={i}
+              click={() => this.clickedCircle(i)}
+              active={this.state.active === i}
+            />
           ))}
         </div>
         <Button click={this.startGame}>START</Button>
         <Button click={this.stopGame}>STOP</Button>
+        {this.state.Popup && <Popup />}
       </div>
     );
   }
