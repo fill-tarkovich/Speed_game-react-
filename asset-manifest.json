@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Speed_game-react-/build/static/css/main.72017302.css",
+    "main.js": "/Speed_game-react-/build/static/js/main.b669ad63.js",
+    "static/media/bg.mp3": "/Speed_game-react-/build/static/media/bg.7a70dec5ad8863cc3a0c.mp3",
+    "static/media/end.mp3": "/Speed_game-react-/build/static/media/end.a8ea5ee4f921a52ab958.mp3",
+    "static/media/1329309424.png": "/Speed_game-react-/build/static/media/1329309424.dad6cd124099f179a47c.png",
+    "index.html": "/Speed_game-react-/build/index.html",
+    "main.72017302.css.map": "/Speed_game-react-/build/static/css/main.72017302.css.map",
+    "main.b669ad63.js.map": "/Speed_game-react-/build/static/js/main.b669ad63.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.72017302.css",
+    "static/js/main.b669ad63.js"
+  ]
+}
