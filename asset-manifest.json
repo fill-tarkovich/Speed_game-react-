@@ -1,16 +1,16 @@
 {
-  "files": {
-    "main.css": "/Speed_game-react-/build/static/css/main.72017302.css",
-    "main.js": "/Speed_game-react-/build/static/js/main.b669ad63.js",
-    "static/media/bg.mp3": "/Speed_game-react-/build/static/media/bg.7a70dec5ad8863cc3a0c.mp3",
-    "static/media/end.mp3": "/Speed_game-react-/build/static/media/end.a8ea5ee4f921a52ab958.mp3",
-    "static/media/1329309424.png": "/Speed_game-react-/build/static/media/1329309424.dad6cd124099f179a47c.png",
-    "index.html": "/Speed_game-react-/build/index.html",
-    "main.72017302.css.map": "/Speed_game-react-/build/static/css/main.72017302.css.map",
-    "main.b669ad63.js.map": "/Speed_game-react-/build/static/js/main.b669ad63.js.map"
-  },
-  "entrypoints": [
-    "static/css/main.72017302.css",
-    "static/js/main.b669ad63.js"
-  ]
+  "main.css": "/Speed_game-react-/static/css/main.692542bc.chunk.css",
+  "main.js": "/Speed_game-react-/static/js/main.dd3e8f97.chunk.js",
+  "main.js.map": "/Speed_game-react-/static/js/main.dd3e8f97.chunk.js.map",
+  "static/js/1.bedbc095.chunk.js": "/Speed_game-react-/static/js/1.bedbc095.chunk.js",
+  "static/js/1.bedbc095.chunk.js.map": "/Speed_game-react-/static/js/1.bedbc095.chunk.js.map",
+  "runtime~main.js": "/Speed_game-react-/static/js/runtime~main.8dee7734.js",
+  "runtime~main.js.map": "/Speed_game-react-/static/js/runtime~main.8dee7734.js.map",
+  "static/media/bg.mp3": "/Speed_game-react-/static/media/bg.3ee1573f.mp3",
+  "static/media/end.mp3": "/Speed_game-react-/static/media/end.55f9d845.mp3",
+  "static/media/index.css": "/Speed_game-react-/static/media/1329309424.a89eaf14.png",
+  "static/css/main.692542bc.chunk.css.map": "/Speed_game-react-/static/css/main.692542bc.chunk.css.map",
+  "index.html": "/Speed_game-react-/index.html",
+  "precache-manifest.69667b4c6e20778fb10fbc4d7a6a2c74.js": "/Speed_game-react-/precache-manifest.69667b4c6e20778fb10fbc4d7a6a2c74.js",
+  "service-worker.js": "/Speed_game-react-/service-worker.js"
 }
