@@ -1,3 +1,4 @@
+import React from "react";
 import { Component } from "react";
 import Circle from "./Circle";
 import Button from "./Button";
