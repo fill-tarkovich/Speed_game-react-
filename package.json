@@ -2,7 +2,7 @@
   "name": "speed_game",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://fill-tarkovich.github.io/Speed_game-react-/build",
+  "homepage": "https://fill-tarkovich.github.io/Speed_game-react-",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^12.1.4",
