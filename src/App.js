@@ -3,12 +3,20 @@ import Circle from "./Circle";
 import Button from "./Button";
 import Popup from "./Popup";
 
+import bgSound from "./sounds/bg.mp3";
+import endSound from "./sounds/end.mp3";
+
+const BGsound = new Audio(bgSound);
+const ENDsound = new Audio(endSound);
+
 class App extends Component {
   state = {
     score: 0,
-    pace: 1000,
-    active: 0,
+    pace: 1200,
+    active: -1,
     showPopup: false,
+    rounds: 0,
+    gameOn: false,
   };
 
   timer = undefined;
@@ -24,23 +32,31 @@ class App extends Component {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
-  startGame = () => {
-    this.nextCircle();
-  };
-
-  stopGame = () => {
-    clearTimeout(this.timer);
-    this.setState({ showPopup: true });
-  };
-
   clickedCircle = (i) => {
-    console.log("clicked", i);
+    if (this.state.active !== i) {
+      this.stopGame();
+      return;
+    }
     this.setState({
       score: this.state.score + 10,
+      rounds: this.state.rounds - 1,
     });
   };
 
+  closeHandler = () => {
+    window.location.reload();
+    // this.setState({
+    //   showPopup: false,
+    //   score: 0,
+    //   active: -1,
+    // });
+  };
+
   nextCircle = () => {
+    if (this.state.rounds >= 5) {
+      this.stopGame();
+      return;
+    }
     let nextActive;
     do {
       nextActive = this.getRndInteger(0, this.circles.length - 1);
@@ -48,11 +64,30 @@ class App extends Component {
 
     this.setState({
       active: nextActive,
+      pace: this.state.pace * 0.95,
+      rounds: this.state.rounds + 1,
     });
 
-    console.log("active is ", this.state.active);
+    console.log(this.state.rounds);
 
-    this.timer = setTimeout(this.nextCircle, 1000);
+    this.timer = setTimeout(this.nextCircle, this.state.pace);
+  };
+
+  startGame = () => {
+    this.nextCircle();
+    this.setState({ gameOn: true });
+    BGsound.play();
+  };
+
+  stopGame = () => {
+    clearTimeout(this.timer);
+    this.setState({
+      showPopup: true,
+      gameOn: false,
+      rounds: 0,
+    });
+    BGsound.pause();
+    ENDsound.play();
   };
 
   render() {
@@ -67,12 +102,15 @@ class App extends Component {
               id={i}
               click={() => this.clickedCircle(i)}
               active={this.state.active === i}
+              disabled={this.state.gameOn}
             />
           ))}
         </div>
-        <Button click={this.startGame}>START</Button>
-        <Button click={this.stopGame}>STOP</Button>
-        {this.state.Popup && <Popup />}
+        {!this.state.gameOn && <Button click={this.startGame}>START</Button>}
+        {this.state.gameOn && <Button click={this.stopGame}>STOP</Button>}
+        {this.state.showPopup && (
+          <Popup close={this.closeHandler} score={this.state.score} />
+        )}
       </div>
     );
   }
